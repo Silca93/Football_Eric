@@ -26,32 +26,20 @@ function App() {
 
   return (
     <>
-      <div className='text-orange-400'>
-        <h1>League of Legends</h1>
-        <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th></th>
-                <th>Continent</th>
-                <th>Country</th>
-                <th>Team</th>
-              </tr>
-            </thead>
-            <tbody>
-              {country? country.map((item) => (
-              <tr>
-                <th>{item.id}</th>
-                <td>{item.name}</td>
-                <td>Quality Control Specialist</td>
-                <td>Blue</td>
-              </tr>
-              ))
-              :""
-            }
-            </tbody>
-          </table>
+      <div className='text-orange-400 flex flex-col justify-center items-center'>
+        <h1 className='m-[4rem]'>League of Legends</h1>
+        <div className="w-[25rem] h-[3rem] bg-blue-300  rounded-lg flex gap-5 text-white justify-center items-center">
+         <Link to="allteams">
+          <button>All teams</button>
+         </Link>
+         <Link to="allplayers">
+         <button>All players</button>
+         </Link>
+         <Link>
+             Upcoming...
+         </Link>
+
+
         </div>
       </div>
       
