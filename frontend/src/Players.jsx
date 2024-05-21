@@ -169,11 +169,11 @@ const change = (e) => {
                   <div className='flex gap-5'>
                   
                     
-                    <Link to="">
                       <div className="card-actions justify-end">
+                    <Link to={`/player_details/${item.id}`}>
                           <button className="btn btn-primary">Details</button>
-                      </div>
                     </Link>
+                      </div>
                       
                   </div>
             

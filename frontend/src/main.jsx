@@ -9,6 +9,7 @@ import Teams from './Teams.jsx';
 import UpdateTeam from './UpdateTeam.jsx';
 import AdminPlayers from './AdminPlayers.jsx';
 import AdminTeams from './AdminTeams.jsx';
+import Details from './Details.jsx';
 
 export default function Main() {
   return (
@@ -21,6 +22,7 @@ export default function Main() {
           <Route path="/update_team" Component={UpdateTeam}/>
           <Route path="/admin_team" Component={AdminTeams}/>
           <Route path="/admin_players" Component={AdminPlayers}/>
+          <Route path="/player_details/:id" Component={Details}/>
 
         </Routes>
 
