@@ -26,17 +26,17 @@ function App() {
 
   return (
     <>
-      <div className='text-orange-400 flex flex-col justify-center items-center'>
+      <div className='text-orange-400 flex flex-col gap-3 justify-center items-center'>
         <h1 className='m-[4rem]'>League of Legends</h1>
-        <div className="w-[25rem] h-[3rem] bg-blue-300  rounded-lg flex gap-5 text-white justify-center items-center">
+        <div className="w-[30rem] h-[4rem] bg-blue-300  rounded-lg flex gap-5 text-white justify-center items-center">
          <Link to="allteams">
-          <button>All teams</button>
-         </Link>
-         <Link to="allplayers">
-         <button>All players</button>
+          <button className='text-xl hover:text-orange-400' >All teams</button>
+         </Link> 
+         <Link to ="allplayers">
+         <button className='text-xl hover:text-orange-400'> All players</button>
          </Link>
          <Link>
-             Upcoming...
+             <button className='text-xl text-red-400 hover:text-green-300'>Admin Mode</button>
          </Link>
 
 

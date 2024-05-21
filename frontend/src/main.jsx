@@ -6,7 +6,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Players from './Players.jsx';
 import Teams from './Teams.jsx';
-
+import UpdateTeam from './UpdateTeam.jsx';
+import AdminPlayers from './AdminPlayers.jsx';
+import AdminTeams from './AdminTeams.jsx';
 
 export default function Main() {
   return (
@@ -16,6 +18,9 @@ export default function Main() {
           <Route path='/' Component={App} />
           <Route path='/allteams' Component={Teams} />
           <Route path='/allplayers' Component={Players} />
+          <Route path="/update_team" Component={UpdateTeam}/>
+          <Route path="/admin_team" Component={AdminTeams}/>
+          <Route path="/admin_players" Component={AdminPlayers}/>
 
         </Routes>
 

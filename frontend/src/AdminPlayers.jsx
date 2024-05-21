@@ -4,8 +4,8 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
 
-export default function Players() {
-  const nav = useNavigate();
+export default function AdminPlayers() {
+    const nav = useNavigate();
 
   const [player, setPlayers] = useState([])
   const [team, setTeams] = useState([])
@@ -131,23 +131,19 @@ const change = (e) => {
 
 }
 
-
-
-
-
-        
   return (
-    <div className="flex flex-col gap-3 justify-center items-center">
+    <div>
+         <div className="flex flex-col gap-3 justify-center items-center">
         <h1 className='text-2xl font-bold'>All players: </h1>
         <div className="w-[30rem] h-[4rem] bg-blue-300  rounded-lg flex gap-5 text-white justify-center items-center">
-          <Link to="/allteams">
+          <Link to="/admin_team">
             <button className='text-xl hover:text-orange-400'>All teams</button>
           </Link> 
-          <Link to ="/allplayers">
+          <Link to ="/admin_players">
             <button className='text-xl hover:text-orange-400'>All players</button>
           </Link>
-          <Link to="/admin_players">
-            <button className='text-xl text-red-400 hover:text-green-300'>Admin Mode</button>
+          <Link to="/allplayers">
+            <button className='text-xl text-red-400 hover:text-green-300'>Log out Admin Mode</button>
           </Link>
 
           
@@ -159,7 +155,7 @@ const change = (e) => {
               const playerRole = role.find((p) => p.id === item.role);
               return (
                 
-                <div key={key} className="card w-96 bg-base-200 shadow-xl my-3">
+                <div key={key} className="card border-[2px] border-green-300 w-96 bg-base-200 shadow-xl my-3">
                 <figure><img src={`http://127.0.0.1:8000/${item.image}`} width="150px" height="150px" alt={player.name} /></figure>
                 <div className="card-body h-[15rem]">
                   <h2 className="card-title ">{item.name}</h2>
@@ -174,7 +170,7 @@ const change = (e) => {
                           <button className="btn btn-primary">Details</button>
                       </div>
                     </Link>
-                      
+                      <button className='btn btn-secondary w-[3rem]' onClick={(id) => deletePlayer(item.id)}>Delete</button>
                   </div>
             
                 </div>
@@ -187,12 +183,14 @@ const change = (e) => {
 
         </div>
 
-        <div className="">
-        {/* <form onSubmit={create}>
-                <label htmlFor="">Name</label>
+        <div className="w-[30rem] h-[30rem] bg-gray-400 flex justify-center items-center gap-3 rounded-lg">
+            <form onSubmit={create} className='flex flex-col w-[25rem] h-[25rem] gap-3'>
+                <label htmlFor="" className='text-xl'>Add a new player</label>
                 <input className="input" placeholder='name' type="text" name='name' value={formPlayer.name} onChange={(e) => change(e)} />
-                <input className="input" placeholder='image' type="file" name='image'  onChange={(e) => change(e)} />
-               
+                <input className="" placeholder='image' type="file" name='image'  onChange={(e) => change(e)} />
+                {/* <input className="input" placeholder='team' type="text" name='team' value={formPlayer.team} onChange={(e) => change(e)} /> */}
+                {/* <input className="input" placeholder='country' type="number" name='country' value={formTeam.country} onChange={(e) => change(e)} /> */}
+                
                 <select value={formPlayer.category} onChange={(e) => setFormPlayer({...formPlayer, 'team': parseInt(e.target.value)})}>
                     <option value="">Select team</option>
                     {team ? team.map(col => (
@@ -217,9 +215,11 @@ const change = (e) => {
                         <option key={col.id} value={col.id}>{col.name}</option>
                     )) : null}
                 </select>
-                <button  className="input" type="submit">Create</button>
-            </form> */}
+                <button  className="input hover:bg-black hover:text-white" type="submit">Create</button>
+            </form>
         </div>
+      
+    </div>
       
     </div>
   )
