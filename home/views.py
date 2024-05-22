@@ -83,6 +83,11 @@ def players(request):
     return JsonResponse({'data' : data})
 
 
+def details(request, id):
+    playerlist = PlayerSerializer(Player.objects.get(id=id))
+    return JsonResponse({'data': playerlist.data})
+
+
 # @api_view(['POST'])
 # def add_player(request):
 #     player_serializer = PlayerSerializer(data=request.data)# ici je récupère mes valeur envoyé en json depuis mon front. Le serializer traduit ces données en python pour que Django puisse les interpréter

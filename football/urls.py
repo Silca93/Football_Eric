@@ -26,6 +26,8 @@ urlpatterns = [
     path("", views.home, name='home'),
 
     path("players/", views.players),
+    path('player_details/<int:id>', views.details),
+
     path('players/create/', views.add_player),
     path('players/delete/<int:id>', views.delete_player),
 
